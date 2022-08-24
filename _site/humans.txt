@@ -1,0 +1,8 @@
+
+/* TEAM */
+	Name: COLOR+ GmbH
+	Site: 
+
+
+/* SITE */
+	Doctype: HTML5
