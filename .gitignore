@@ -65,6 +65,7 @@ typings/
 
 # Build 
 dist
+_site
 
 # Don't commit temp build files
 src/static/app.min.js
