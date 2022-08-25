@@ -3,7 +3,11 @@ layout: base.njk
 title: IAA 2022 - Anmeldung und Ticketanforderung
 ---
 
-<form action="/mail.php" method="post">
+<form
+  action="https://www.color-online.net/spier.php"
+  method="post"
+  class="spierForm"
+>
   <div class="p-6">
     <img src="static/header_spier.svg" alt="Header Spier" class="mb-4" />
     <img
@@ -138,9 +142,10 @@ title: IAA 2022 - Anmeldung und Ticketanforderung
     </div>
     <div class="flex items-top my-2">
       <input
+        name="datenschutz"
         id="default-checkbox"
         type="checkbox"
-        value="datenschutz"
+        value="ja"
         class="mt-1"
         required
       />
@@ -160,7 +165,7 @@ title: IAA 2022 - Anmeldung und Ticketanforderung
       >
     </div>
     <div>
-      <div class="flex justify-center my-12">
+      <div class="flex justify-center my-12 submit-button">
         <img src="static/button_pre.svg" alt="PreButton" class="h-12" />
         <button
           type="submit"
