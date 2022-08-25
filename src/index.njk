@@ -3,154 +3,188 @@ layout: base.njk
 title: IAA 2022 - Anmeldung und Ticketanforderung
 ---
 
-<img src="static/header_spier.svg" alt="Header Spier" class="mb-4" />
-<img src="static/sub-header_spier.svg" alt="Sub Header Spier" class="mb-10" />
-<p class="text-center font-bold text-xl mb-4">
-  Hallo und guten Tag. Schön, dass wir Sie hier begrüßen dürfen.
-</p>
-<p class="text-center font-bold">
-  Vereinbaren Sie hier Ihren Gesprächstermin und sichern Sie sich Ihr
-  Messeticket.
-</p>
-<p class="text-center mb-6">
-  Bitte ausfüllen und auf senden klicken. Ihr Termin und der Ticketabrufcode
-  wird Ihnen per E-Mail bestätigt.
-</p>
-<div class="p-10 bg-gray-200 flex flex-row space-x-8 justify-between">
-  <div class="w-full space-y-6">
-    <div class="space-y-2">
-      <label for="ansprechpartner">Firma*</label>
-      <input
-        type="text"
-        name="firma"
-        id="input_firma"
-        class="px-6 py-3 rounded-sm w-full border-0"
-      />
-    </div>
-    <div class="space-y-2">
-      <label for="ansprechpartner">Ansprechpartner*</label>
-      <input
-        type="text"
-        name="ansprechpartner"
-        id="input_ansprechpartner"
-        class="px-6 py-3 rounded-sm w-full border-0"
-      />
-    </div>
-    <div class="space-y-2">
-      <label for="strasse">Straße / Haus-Nr.*</label>
-      <input
-        type="text"
-        name="strasse"
-        id="input_strasse"
-        class="px-6 py-3 rounded-sm w-full border-0"
-      />
-    </div>
-    <div class="space-y-2">
-      <label for="plz">PLZ / Ort*</label>
-      <input
-        type="text"
-        name="plz"
-        id="input_plz"
-        class="px-6 py-3 rounded-sm w-full border-0"
-      />
-    </div>
-  </div>
-  <div class="w-full space-y-6">
-    <div class="space-y-2">
-      <label for="datum">Datum wählen*</label>
-
-      <input
-        type="date"
-        name="datum"
-        id="input_datum"
-        placeholder="Datum*"
-        class="px-6 py-3 rounded-sm w-full h-12 border-0"
-      />
-    </div>
-    <div class="space-y-2">
-      <label for="uhrzeit">Geplante Uhrzeit</label>
-      <input
-        type="time"
-        name="uhrzeit"
-        id="input_uhrzeit"
-        class="px-6 py-3 rounded-sm w-full h-12 border-0"
-      />
-    </div>
-    <div class="">
-      <span>Eintrittsticket</span>
-      <div class="flex bg-white px-5 py-3 space-x-4 mt-2">
-        <div class="">
+<form action="/mail.php" method="post">
+  <div class="p-6">
+    <img src="static/header_spier.svg" alt="Header Spier" class="mb-4" />
+    <img
+      src="static/sub-header_spier.svg"
+      alt="Sub Header Spier"
+      class="mb-4 md:mb-10"
+    />
+    <p class="text-center font-bold text-base md:text-xl mb-4">
+      Hallo und guten Tag. Schön, dass wir Sie hier begrüßen dürfen.
+    </p>
+    <p class="text-center font-bold mb-4 md:mb-0">
+      Vereinbaren Sie Ihren Gesprächstermin und sichern Sie sich Ihr
+      Messeticket.
+    </p>
+    <p class="text-center mb-6">
+      Bitte ausfüllen und auf "Absenden" klicken. <br />
+      Ihr Termin wird bestätigt und der Ticketabrufcode per E-Mail zugesendet.
+    </p>
+    <div
+      class="p-4 md:p-10 bg-gray-200 flex flex-col md:flex-row md:space-x-8 justify-between"
+    >
+      <div class="w-full space-y-6 mb-6 md:mb-0">
+        <div class="space-y-2">
+          <label for="ansprechpartner">Firma*</label>
           <input
-            id="eintrittskarte-1"
-            type="radio"
-            value="ja"
-            name="eintrittskarte"
-            class=""
+            type="text"
+            name="firma"
+            id="input_firma"
+            class="px-6 py-3 rounded-sm w-full border-0"
+            required
           />
-          <label for="eintrittskarte-1" class="">Ja</label>
         </div>
-        <div>
+        <div class="space-y-2">
+          <label for="ansprechpartner">Ansprechpartner*</label>
           <input
-            id="eintrittskarte-2"
-            type="radio"
-            value="nein"
-            name="eintrittskarte"
-            class=""
+            type="text"
+            name="ansprechpartner"
+            id="input_ansprechpartner"
+            class="px-6 py-3 rounded-sm w-full border-0"
+            required
           />
-          <label for="eintrittskarte-2" class="">Nein</label>
+        </div>
+        <div class="space-y-2">
+          <label for="strasse">Straße / Haus-Nr.*</label>
+          <input
+            type="text"
+            name="strasse"
+            id="input_strasse"
+            class="px-6 py-3 rounded-sm w-full border-0"
+            required
+          />
+        </div>
+        <div class="space-y-2">
+          <label for="plz">PLZ / Ort*</label>
+          <input
+            type="text"
+            name="plz"
+            id="input_plz"
+            class="px-6 py-3 rounded-sm w-full border-0"
+            required
+          />
+        </div>
+      </div>
+      <div class="w-full space-y-6">
+        <div class="space-y-2">
+          <label for="datum">Datum wählen*</label>
+
+          <input
+            type="date"
+            name="datum"
+            id="input_datum"
+            placeholder="Datum*"
+            class="px-6 py-3 rounded-sm w-full h-12 border-0"
+            required
+            min="2022-09-20"
+            max="2022-09-25"
+          />
+        </div>
+        <div class="space-y-2">
+          <label for="uhrzeit">Geplante Uhrzeit</label>
+          <input
+            type="time"
+            name="uhrzeit"
+            id="input_uhrzeit"
+            class="px-6 py-3 rounded-sm w-full h-12 border-0"
+            min="09:00"
+            max="18:00"
+            value="09:00"
+          />
+        </div>
+        <div class="">
+          <span>Eintrittsticket</span>
+          <div class="flex bg-white px-5 py-3 space-x-4 mt-2">
+            <div class="">
+              <input
+                id="eintrittskarte-1"
+                type="radio"
+                value="ja"
+                name="eintrittskarte"
+                class="mb-1"
+              />
+              <label for="eintrittskarte-1" class="">Ja</label>
+            </div>
+            <div>
+              <input
+                id="eintrittskarte-2"
+                type="radio"
+                value="nein"
+                name="eintrittskarte"
+                class="mb-1"
+              />
+              <label for="eintrittskarte-2" class="">Nein</label>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <label for="email">Ihre E-Mail*</label>
+          <input
+            type="email"
+            name="email"
+            id="input_email"
+            class="px-6 py-3 rounded-sm w-full border-0"
+            required
+          />
         </div>
       </div>
     </div>
-    <div class="space-y-2">
-      <label for="email">Ihre E-Mail*</label>
+    <p class="text-gray-400 text-right mt-2 mb-2">* = Pflichtfelder</p>
+    <div class="flex items-end">
+      <p class="text-xl font-bold mr-2">Datenschutz*</p>
+      <span class="text-gray-400">bitte ankreuzen</span>
+    </div>
+    <div class="flex items-top my-2">
       <input
-        type="email"
-        name="email"
-        id="input_email"
-        class="px-6 py-3 rounded-sm w-full border-0"
+        id="default-checkbox"
+        type="checkbox"
+        value="datenschutz"
+        class="mt-1"
+        required
       />
+      <label
+        for="default-checkbox"
+        class="ml-2 text-sm font-medium text-gray-600"
+        >Ich habe die
+        <a href="https://www.spier.de/unternehmen/datenschutz" class="underline"
+          >Datenschutzerklärung</a
+        >
+        zur Kenntnis genommen. Ich stimme zu, dass meine Angaben und Daten zur
+        Beantwortung meiner Anfrage elektronicsh erhoben und gespeichert werden.
+        HINWEIS: Sie können Ihre Einwiligung jederzeit für die Zukunft per
+        E-Mail an:
+        <a href="mailto:info@spier.de" class="underline">info@spier.de</a>
+        widerrufen.</label
+      >
+    </div>
+    <div>
+      <div class="flex justify-center my-12">
+        <img src="static/button_pre.svg" alt="PreButton" class="h-12" />
+        <button
+          type="submit"
+          class="h-12 bg-spier-100 text-white px-12 uppercase text-2xl tracking-wider hover:shadow-xl transition-all duration-500 font-bold"
+        >
+          Absenden
+        </button>
+      </div>
+    </div>
+    <div
+      class="bg-gray-200 text-center py-3 px-6 my-12 md:my-24 text-gray-500 text-sm"
+    >
+      © 2022 SPIER GmbH & Co. Fahrzeugwerk KG |
+      <a
+        class="hover:text-black"
+        href="https://www.spier.de/unternehmen/impressum"
+        >Impressum</a
+      >
+      |
+      <a
+        class="hover:text-black"
+        href="https://www.spier.de/unternehmen/datenschutz"
+        >Datenschutzerklärung</a
+      >
     </div>
   </div>
-</div>
-<p class="text-gray-400 text-right mt-2 mb-6">* = Pflichtfelder</p>
-<div class="flex items-end">
-  <p class="text-xl font-bold mr-2">Datenschutz*</p>
-  <span class="text-gray-400">bitte ankreuzen</span>
-</div>
-<div class="flex items-top my-2">
-  <input
-    id="default-checkbox"
-    type="checkbox"
-    value="datenschutz"
-    class="mt-1"
-  />
-  <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-600"
-    >Ich habe den Datenschutzerklärung zur Kenntnis genommen. Ich stimme zu,
-    dass meine Angaben und Daten zur Beantwortung meiner Anfrage elektronicsh
-    erhoben und gespeichert werden. HINWEIS: Sie können Ihre Einwiligung
-    jederzeit für die Zukunft per E-Mail an: info@spier.de widerrufen.</label
-  >
-</div>
-<div>
-  <div class="flex justify-center my-12">
-    <img src="static/button_pre.svg" alt="PreButton" class="h-12" />
-    <button
-      type="submit"
-      class="h-12 bg-spier-100 text-white px-12 uppercase text-2xl tracking-wider hover:shadow-xl transition-all duration-500 font-bold"
-    >
-      Absenden
-    </button>
-  </div>
-</div>
-<div class="bg-gray-200 text-center py-3 px-6 my-24 text-gray-500">
-  © 2022 SPIER GmbH & Co. Fahrzeugwerk KG |
-  <a class="hover:text-black" href="https://www.spier.de/unternehmen/impressum"
-    >Impressum</a
-  >
-  |
-  <a
-    class="hover:text-black"
-    href="https://www.spier.de/unternehmen/datenschutz"
-    >Datenschutzerklärung</a
-  >
-</div>
+</form>
