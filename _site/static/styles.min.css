@@ -32,7 +32,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif; /* 4 */
+  font-family: Helvetica Neue, Helvetica, Arial, ui-sans-serif, system-ui, sans-serif; /* 4 */
 }
 
 /*
@@ -610,10 +610,6 @@ select {
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
-.my-24 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -621,14 +617,14 @@ select {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
 .mb-6 {
   margin-bottom: 1.5rem;
 }
 .mt-2 {
   margin-top: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
 }
 .mb-2 {
   margin-bottom: 0.5rem;
@@ -642,9 +638,6 @@ select {
 .ml-2 {
   margin-left: 0.5rem;
 }
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
 .flex {
   display: flex;
 }
@@ -657,9 +650,6 @@ select {
 .max-w-3xl {
   max-width: 48rem;
 }
-.flex-row {
-  flex-direction: row;
-}
 .flex-col {
   flex-direction: column;
 }
@@ -671,11 +661,6 @@ select {
 }
 .justify-between {
   justify-content: space-between;
-}
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -714,9 +699,6 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
-.p-10 {
-  padding: 2.5rem;
-}
 .p-6 {
   padding: 1.5rem;
 }
@@ -739,15 +721,15 @@ select {
   padding-left: 3rem;
   padding-right: 3rem;
 }
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
 .text-center {
   text-align: center;
 }
 .text-right {
   text-align: right;
+}
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 .text-xl {
   font-size: 1.25rem;
@@ -761,12 +743,8 @@ select {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-.font-bold {
-  font-weight: 700;
+.font-semibold {
+  font-weight: 600;
 }
 .font-medium {
   font-weight: 500;
