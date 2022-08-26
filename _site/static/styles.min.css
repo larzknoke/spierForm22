@@ -724,10 +724,6 @@ select {
   padding-left: 3rem;
   padding-right: 3rem;
 }
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
 .text-center {
   text-align: center;
 }
@@ -749,10 +745,6 @@ select {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 .font-semibold {
   font-weight: 600;
